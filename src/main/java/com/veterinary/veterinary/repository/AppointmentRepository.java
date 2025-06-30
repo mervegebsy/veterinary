@@ -16,10 +16,8 @@ public interface AppointmentRepository extends JpaRepository<Appointment,Long> {
 
     boolean existsByDoctorAndAppointmentDate(Doctor doctor, LocalDateTime appointmentDate);
 
-    // 1. yol - Doctor entity ile
     List<Appointment> findByDoctorAndAppointmentDateBetween(Doctor doctor, LocalDateTime start, LocalDateTime end);
 
-    // 2. yol - Sadece doctorId ile (JPQL sorgu)
     @Query("SELECT a FROM Appointment a WHERE a.doctor.id = :doctorId AND a.appointmentDate BETWEEN :start AND :end")
     List<Appointment> findByDoctorIdAndAppointmentDateBetween(@Param("doctorId") Long doctorId,
                                                               @Param("start") LocalDateTime start,

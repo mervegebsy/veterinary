@@ -18,7 +18,6 @@ public interface AvailableDateRepository extends JpaRepository<AvailableDate, Lo
     // Doktorun tüm müsait günlerini getirir
     List<AvailableDate> findByDoctor(Doctor doctor);
 
-    // ID üzerinden doktorun tüm günlerini getirir (DTO veya ID ile çalışma durumlarında)
     List<AvailableDate> findByDoctorId(Long doctorId);
 
     // Doktorun belirtilen tarihte çalışıp çalışmadığını kontrol eder

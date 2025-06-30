@@ -10,7 +10,7 @@
 			"name": "Animals",
 			"item": [
 				{
-					"name": "GetAnimals",
+					"name": "findAll",
 					"request": {
 						"method": "GET",
 						"header": []
@@ -18,7 +18,7 @@
 					"response": []
 				},
 				{
-					"name": "Post Animal",
+					"name": "save",
 					"request": {
 						"method": "GET",
 						"header": []
@@ -26,7 +26,7 @@
 					"response": []
 				},
 				{
-					"name": "Put",
+					"name": "update",
 					"request": {
 						"method": "GET",
 						"header": []
@@ -34,7 +34,7 @@
 					"response": []
 				},
 				{
-					"name": "Get ID",
+					"name": "findById",
 					"request": {
 						"method": "GET",
 						"header": []
@@ -42,7 +42,7 @@
 					"response": []
 				},
 				{
-					"name": "Get AnimalName",
+					"name": "findByName",
 					"request": {
 						"method": "GET",
 						"header": []
@@ -50,7 +50,7 @@
 					"response": []
 				},
 				{
-					"name": "Get Customer ID",
+					"name": "findByCustomer",
 					"request": {
 						"method": "GET",
 						"header": []
@@ -58,7 +58,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete Animal",
+					"name": "delete",
 					"request": {
 						"method": "GET",
 						"header": []
@@ -71,7 +71,7 @@
 			"name": "Doctor",
 			"item": [
 				{
-					"name": "Post Doctor",
+					"name": "createDoctor",
 					"request": {
 						"method": "GET",
 						"header": []
@@ -79,7 +79,7 @@
 					"response": []
 				},
 				{
-					"name": "Get All Doctor",
+					"name": "getAllDoctors",
 					"request": {
 						"method": "GET",
 						"header": []
@@ -87,7 +87,7 @@
 					"response": []
 				},
 				{
-					"name": "Get Doctor Id",
+					"name": "getDoctorById",
 					"request": {
 						"method": "GET",
 						"header": []
@@ -95,7 +95,7 @@
 					"response": []
 				},
 				{
-					"name": "Get Doctor Id Copy",
+					"name": "updateDoctor",
 					"request": {
 						"method": "GET",
 						"header": []
@@ -103,7 +103,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete doctor",
+					"name": "deleteDoctor",
 					"request": {
 						"method": "GET",
 						"header": []
@@ -116,7 +116,7 @@
 			"name": "Customer",
 			"item": [
 				{
-					"name": "GetCustomers",
+					"name": "getAllCustomers",
 					"request": {
 						"method": "GET",
 						"header": []
@@ -124,7 +124,7 @@
 					"response": []
 				},
 				{
-					"name": "Get Customer Id",
+					"name": "getCustomerById",
 					"request": {
 						"method": "GET",
 						"header": []
@@ -132,7 +132,7 @@
 					"response": []
 				},
 				{
-					"name": "Post Customer",
+					"name": "createCustomer",
 					"request": {
 						"method": "GET",
 						"header": []
@@ -140,7 +140,7 @@
 					"response": []
 				},
 				{
-					"name": "Put Customer",
+					"name": "updateCustomer",
 					"request": {
 						"method": "GET",
 						"header": []
@@ -148,7 +148,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete Customer",
+					"name": "deleteCustomer",
 					"request": {
 						"method": "GET",
 						"header": []
@@ -156,7 +156,7 @@
 					"response": []
 				},
 				{
-					"name": "Search Name",
+					"name": "searchByName",
 					"request": {
 						"method": "GET",
 						"header": []
@@ -169,7 +169,7 @@
 			"name": "Vaccine",
 			"item": [
 				{
-					"name": "Get Vaccines",
+					"name": "getAll",
 					"request": {
 						"method": "GET",
 						"header": []
@@ -177,7 +177,7 @@
 					"response": []
 				},
 				{
-					"name": "Post Vaccine",
+					"name": "createVaccine",
 					"request": {
 						"method": "GET",
 						"header": []
@@ -185,7 +185,7 @@
 					"response": []
 				},
 				{
-					"name": "Get Vsccıne Id",
+					"name": "getById",
 					"request": {
 						"method": "GET",
 						"header": []
@@ -193,7 +193,7 @@
 					"response": []
 				},
 				{
-					"name": "Put Vaccine",
+					"name": "update",
 					"request": {
 						"method": "GET",
 						"header": []
@@ -201,7 +201,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete Vaccine",
+					"name": "delete",
 					"request": {
 						"method": "GET",
 						"header": []
@@ -209,7 +209,182 @@
 					"response": []
 				},
 				{
-					"name": "Get Protection Date",
+					"name": "getByProtectionFinishDateBetween",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AnimalVaccine",
+			"item": [
+				{
+					"name": "createAnimalVaccine",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "getAnimalVaccineById",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "updateAnimalVaccine",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "deleteAnimalVaccine",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "getAllAnimalVaccines",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "getByAnimalId",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "getByVaccineCodeAndActiveProtection",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Appointment",
+			"item": [
+				{
+					"name": "createAppointment",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "getAppointmentById",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "getAllAppointments",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "updateAppointment",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "deleteAppointment",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "getByDoctorAndDateRange",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "getByAnimalAndDateRange",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AvailableDate",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "getById",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "getByDoctorId",
 					"request": {
 						"method": "GET",
 						"header": []

@@ -3,6 +3,8 @@ package com.veterinary.veterinary.controller;
 import com.veterinary.veterinary.dto.request.AppointmentRequest;
 import com.veterinary.veterinary.dto.response.AppointmentResponse;
 import com.veterinary.veterinary.entity.Appointment;
+import com.veterinary.veterinary.exception.MessageConstants;
+import com.veterinary.veterinary.exception.NotFoundException;
 import com.veterinary.veterinary.mapper.AppointmentMapper;
 import com.veterinary.veterinary.service.AppointmentService;
 import lombok.RequiredArgsConstructor;
@@ -61,7 +63,7 @@ public class AppointmentController {
         return ResponseEntity.noContent().build();
     }
 
-    @GetMapping("/doctor/{doctorId}")
+    /*@GetMapping("/doctor/{doctorId}")
     public ResponseEntity<List<AppointmentResponse>> getByDoctorAndDateRange(
             @PathVariable Long doctorId,
             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime start,
@@ -83,5 +85,37 @@ public class AppointmentController {
                 .map(appointmentMapper::toResponse)
                 .collect(Collectors.toList());
         return ResponseEntity.ok(responses);
+    }*/
+    @GetMapping("/doctor/{doctorId}")
+    public ResponseEntity<List<AppointmentResponse>> getByDoctorAndDateRange(
+            @PathVariable Long doctorId,
+            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime start,
+            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime end) {
+
+        List<Appointment> appointments = appointmentService.getByDoctorIdAndDateRange(doctorId, start, end);
+        if (appointments.isEmpty()) {
+            throw new NotFoundException(MessageConstants.IN_THIS_DATE_RANGE_DOCTOR_HAS_NOT_APPOINTMENT);
+        }
+        List<AppointmentResponse> responses = appointments.stream()
+                .map(appointmentMapper::toResponse)
+                .collect(Collectors.toList());
+        return ResponseEntity.ok(responses);
     }
+
+    @GetMapping("/animal/{animalId}")
+    public ResponseEntity<List<AppointmentResponse>> getByAnimalAndDateRange(
+            @PathVariable Long animalId,
+            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime start,
+            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime end) {
+
+        List<Appointment> appointments = appointmentService.getByAnimalIdAndDateRange(animalId, start, end);
+        if (appointments.isEmpty()) {
+            throw new NotFoundException(MessageConstants.ANIMAL_NOT_FOUND_THIS_DATE_RANGE);
+        }
+        List<AppointmentResponse> responses = appointments.stream()
+                .map(appointmentMapper::toResponse)
+                .collect(Collectors.toList());
+        return ResponseEntity.ok(responses);
+    }
+
 }

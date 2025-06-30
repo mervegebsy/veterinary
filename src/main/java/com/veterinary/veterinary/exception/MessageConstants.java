@@ -1,6 +1,8 @@
 package com.veterinary.veterinary.exception;
 
 
+import jakarta.servlet.http.PushBuilder;
+
 public class MessageConstants {
 
     // Genel
@@ -32,7 +34,8 @@ public class MessageConstants {
     public static final String INVALID_DATE_RANGE = "Geçersiz tarih aralığı.";
     public static final String AVAILABLE_DATE_NOT_FOUND = "id’li AvailableDate sistemde bulunamadı.";
 
+    public static final String ANIMAL_NOT_FOUND_THIS_DATE_RANGE = "Belirtilen tarih aralığında hayvanın randevusu bulunmamaktadır.";
+    public static final String IN_THIS_DATE_RANGE_DOCTOR_HAS_NOT_APPOINTMENT = "Belirtilen tarih aralığında doktorun randevusu bulunmamaktadır.";
     private MessageConstants() {
-        // Sabit sınıfı - nesne oluşturulamaz
     }
 }
